@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryLight">
+
+    <ImageView
+        android:id="@+id/imageCars"
+        android:layout_width="175dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:scaleType="centerInside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_3d_car_01" />
+
+    <ImageView
+        android:id="@+id/imageClothes"
+        android:layout_width="175dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageCars"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.594"
+        app:layout_constraintStart_toEndOf="@+id/imageCars"
+        app:layout_constraintTop_toTopOf="@+id/imageCars"
+        app:layout_constraintVertical_bias="0.0"
+        android:src="@drawable/ic_dress" />
+
+    <ImageView
+        android:id="@+id/imageElectronics"
+        android:layout_width="175dp"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageCars"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toStartOf="@+id/imageCars"
+        app:layout_constraintTop_toBottomOf="@+id/imageCars"
+        app:layout_constraintVertical_bias="0.50"
+        android:src="@drawable/ic_smartphone_svgrepo_com" />
+
+    <ImageView
+        android:id="@+id/imageOther"
+        android:layout_width="175dp"
+        android:layout_height="200dp"
+        android:scaleType="fitEnd"
+        app:layout_constraintBottom_toBottomOf="@+id/imageElectronics"
+        app:layout_constraintEnd_toEndOf="@+id/imageClothes"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/imageClothes"
+        app:layout_constraintTop_toTopOf="@+id/imageElectronics"
+        android:src="@drawable/ic_other" />
+
+    <TextView
+        android:id="@+id/categoryTitleCars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cars_title"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageCars"
+        app:layout_constraintHorizontal_bias="0.442"
+        app:layout_constraintStart_toStartOf="@+id/imageCars"
+        app:layout_constraintTop_toBottomOf="@+id/imageCars" />
+
+    <TextView
+        android:id="@+id/categoryTitleClothes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/clothes_title"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageClothes"
+        app:layout_constraintHorizontal_bias="0.475"
+        app:layout_constraintStart_toStartOf="@+id/imageClothes"
+        app:layout_constraintTop_toBottomOf="@+id/imageClothes" />
+
+    <TextView
+        android:id="@+id/categoryTitleElectronics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingEnd="4dp"
+        android:text="@string/electronics_title"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageElectronics"
+        app:layout_constraintStart_toStartOf="@+id/imageElectronics"
+        app:layout_constraintTop_toBottomOf="@+id/imageElectronics" />
+
+    <TextView
+        android:id="@+id/categoryTitleOther"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/other_title"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageOther"
+        app:layout_constraintHorizontal_bias="0.442"
+        app:layout_constraintStart_toStartOf="@+id/imageOther"
+        app:layout_constraintTop_toBottomOf="@+id/imageOther" />
+</androidx.constraintlayout.widget.ConstraintLayout>

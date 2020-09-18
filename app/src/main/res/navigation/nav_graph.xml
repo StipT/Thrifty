@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    android:label="fragment_feed"
+    app:startDestination="@id/splashFragment">
+
+    <!--LoginFragment-->
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="hr.stipanic.tomislav.thrifty.ui.auth_screen.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment"
+            app:enterAnim="@anim/slide_in_top"
+            app:exitAnim="@anim/slide_out_bottom"
+            app:popEnterAnim="@anim/slide_in_bottom"
+            app:popExitAnim="@anim/slide_out_top" />
+        <action
+            android:id="@+id/action_loginFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <!--RegisterFragment-->
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="hr.stipanic.tomislav.thrifty.ui.auth_screen.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/slide_out_top"
+            app:popEnterAnim="@anim/slide_in_top"
+            app:popExitAnim="@anim/slide_out_bottom"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <!--DetailsFragment-->
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="hr.stipanic.tomislav.thrifty.ui.feed_screen.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details">
+        <action
+            android:id="@+id/action_detailsFragment_to_feedListFragment"
+            app:destination="@id/feedListFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_detailsFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+
+    <!--CategoryFragment-->
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="hr.stipanic.tomislav.thrifty.ui.feed_screen.CategoryFragment"
+        android:label="fragment_category"
+        tools:layout="@layout/fragment_category">
+        <action
+            android:id="@+id/action_categoryFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_categoryFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/action_categoryFragment_to_feedListFragment"
+            app:destination="@id/feedListFragment"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/slide_out_top"
+            app:popEnterAnim="@anim/slide_in_top"
+            app:popExitAnim="@anim/slide_out_bottom" />
+    </fragment>
+
+    <!--ProfileFragment-->
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="hr.stipanic.tomislav.thrifty.ui.profile_screen.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_profileFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_feedListFragment"
+            app:destination="@id/feedListFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_addInfoFragment"
+            app:destination="@id/addInfoFragment"
+            app:enterAnim="@anim/slide_in_top"
+            app:exitAnim="@anim/slide_out_bottom"
+            app:popEnterAnim="@anim/slide_in_bottom"
+            app:popExitAnim="@anim/slide_out_top"/>
+        <action
+            android:id="@+id/action_profileFragment_to_editFragment"
+            app:destination="@id/editFragment" />
+    </fragment>
+
+    <!--ChatListFragment-->
+
+    <!--ChatFragment-->
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="hr.stipanic.tomislav.thrifty.ui.chat_screen.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat">
+        <action
+            android:id="@+id/action_chatFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+
+    <!--FeedListFragment-->
+    <fragment
+        android:id="@+id/feedListFragment"
+        android:name="hr.stipanic.tomislav.thrifty.ui.feed_screen.FeedListFragment"
+        android:label="fragment_feed_list"
+        tools:layout="@layout/fragment_feed_list">
+        <argument
+            android:name="category"
+            android:defaultValue="Thrifty" />
+        <action
+            android:id="@+id/action_feedListFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment"
+            app:enterAnim="@anim/slide_in_top"
+            app:exitAnim="@anim/slide_out_bottom"
+            app:popEnterAnim="@anim/slide_in_bottom"
+            app:popExitAnim="@anim/slide_out_top" />
+        <action
+            android:id="@+id/action_feedListFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_feedListFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+
+    <!--SplashFragment-->
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="hr.stipanic.tomislav.thrifty.ui.splash_screen.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
+    </fragment>
+
+    <!--AddImageFragment-->
+    <fragment
+        android:id="@+id/addImageFragment"
+        android:name="hr.stipanic.tomislav.thrifty.ui.profile_screen.add_screen.AddImageFragment"
+        android:label="fragment_add_image"
+        tools:layout="@layout/fragment_add_image">
+        <action
+            android:id="@+id/action_addImageFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/slide_out_top"
+            app:popEnterAnim="@anim/slide_in_top"
+            app:popExitAnim="@anim/slide_out_bottom"
+            app:popUpTo="@id/addImageFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_addImageFragment_to_addLocationFragment"
+            app:destination="@id/addLocationFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+    </fragment>
+
+    <!--AddInfoFragment-->
+    <fragment
+        android:id="@+id/addInfoFragment"
+        android:name="hr.stipanic.tomislav.thrifty.ui.profile_screen.add_screen.AddInfoFragment"
+        android:label="fragment_add_info"
+        tools:layout="@layout/fragment_add_info">
+        <action
+            android:id="@+id/action_addInfoFragment_to_addLocationFragment"
+            app:destination="@id/addLocationFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_addInfoFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/slide_out_top"
+            app:popEnterAnim="@anim/slide_in_top"
+            app:popExitAnim="@anim/slide_out_bottom"/>
+    </fragment>
+
+    <!--AddLocationFragment-->
+    <fragment
+        android:id="@+id/addLocationFragment"
+        android:name="hr.stipanic.tomislav.thrifty.ui.profile_screen.add_screen.AddLocationFragment"
+        android:label="fragment_add_location"
+        tools:layout="@layout/fragment_add_location">
+        <action
+            android:id="@+id/action_addLocationFragment_to_addImageFragment"
+            app:destination="@id/addImageFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_addLocationFragment_to_addInfoFragment"
+            app:destination="@id/addInfoFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+    </fragment>
+
+    <!--EditFragment-->
+    <fragment
+        android:id="@+id/editFragment"
+        android:name="hr.stipanic.tomislav.thrifty.ui.profile_screen.edit_screen.EditFragment"
+        android:label="EditFragment"
+        tools:layout="@layout/fragment_edit">
+        <action
+            android:id="@+id/action_editFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_editFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="message"
+            type="hr.stipanic.tomislav.thrifty.data.model.Message" />
+
+        <variable
+            name="stringUtils"
+            type="hr.stipanic.tomislav.thrifty.utils.StringUtils" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryLight">
+
+        <TextView
+            android:id="@+id/chatMessageInc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:background="@drawable/chat_bubble_inc"
+            android:lineSpacingExtra="2dp"
+            android:minWidth="50dp"
+            android:paddingLeft="20dp"
+            android:paddingTop="4dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="10dp"
+            android:text="@{message.content}"
+            android:textAlignment="textStart"
+            android:textColor="@color/textColorOnPrimary"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chatNicknameInc"
+            app:layout_constraintWidth_max="wrap"
+            app:layout_constraintWidth_percent="0.8"
+            tools:text="dfs" />
+
+        <TextView
+            android:id="@+id/chatDateInc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="4dp"
+            android:paddingStart="16dp"
+            android:text="@{stringUtils.getTimePassedString(message.date, chatNicknameInc)}"
+            android:textAlignment="textStart"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/chatMessageInc"
+            app:layout_constraintTop_toBottomOf="@+id/chatMessageInc"
+            tools:text="5 min ago" />
+
+        <TextView
+            android:id="@+id/chatNicknameInc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@{message.displayName}"
+            android:textAlignment="textEnd"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Tomislav " />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

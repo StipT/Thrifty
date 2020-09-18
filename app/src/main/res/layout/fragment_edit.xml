@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="article"
+            type="hr.stipanic.tomislav.thrifty.data.model.Article" />
+
+        <variable
+            name="user"
+            type="hr.stipanic.tomislav.thrifty.data.model.User" />
+
+        <variable
+            name="stringUtils"
+            type="hr.stipanic.tomislav.thrifty.utils.StringUtils" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="hr.stipanic.tomislav.thrifty.ui.feed_screen.DetailsFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <EditText
+                android:id="@+id/editFragmentTitle"
+                style="?attr/textAppearanceHeadline6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                android:text="@{article.title}"
+                android:textAlignment="center"
+                android:textColor="@color/textColorOnPrimary"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.012"
+                tools:text="GOLF III Garažiran POVOLJNO HITNO! MOGUCA ZAMJENA" />
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/nestedScrollView"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                android:clipToPadding="true"
+                android:padding="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/editFragmentTitle"
+                app:layout_constraintHorizontal_bias="0.50"
+                app:layout_constraintStart_toStartOf="@+id/flexboxLayout"
+                app:layout_constraintTop_toBottomOf="@+id/editFragmentPrice">
+
+                <EditText
+                    android:id="@+id/editFragmentDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingMultiplier="1.2"
+                    android:minHeight="400dp"
+                    android:text="@{article.desc}"
+                    tools:text="dfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngskdfsdfsdjkgbskdngsk" />
+
+            </androidx.core.widget.NestedScrollView>
+
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/flexboxLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:clickable="false"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:alignItems="center"
+                app:flexWrap="wrap"
+                app:justifyContent="center"
+                app:layout_constraintEnd_toEndOf="@+id/editFragmentTitle"
+                app:layout_constraintStart_toStartOf="@+id/editFragmentTitle"
+                app:layout_constraintTop_toBottomOf="@+id/editFragmentTitle">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/editCategoryChip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:text="@{article.category}"
+                    android:textColor="@android:color/white"
+                    app:layout_constraintStart_toStartOf="@+id/editFragmentTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/editFragmentTitle"
+                    tools:text="Other" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/editLocationChip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:text="@{stringUtils.showLocation(article.city, article.country)}"
+                    android:textColor="@android:color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/editCategoryChip"
+                    app:layout_constraintStart_toEndOf="@+id/editCategoryChip"
+                    app:layout_constraintTop_toTopOf="@+id/editCategoryChip"
+                    tools:text="Vukovar, Hrvatska" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/editDateChip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:textColor="@android:color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/editLocationChip"
+                    app:layout_constraintStart_toEndOf="@+id/editLocationChip"
+                    app:layout_constraintTop_toTopOf="@+id/editLocationChip"
+                    tools:text="@{stringUtils.getTimePassedString(article.date, editNickname)}" />
+            </com.google.android.flexbox.FlexboxLayout>
+
+            <TextView
+                android:id="@+id/editNickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{stringUtils.showUsername(user.nickname)}"
+                android:textColor="@color/colorSecondaryDark"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/editFragmentPrice"
+                app:layout_constraintEnd_toStartOf="@+id/editFragmentPrice"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/flexboxLayout"
+                app:layout_constraintTop_toTopOf="@+id/editFragmentPrice"
+                tools:text="by Tomislav234" />
+
+            <EditText
+                android:id="@+id/editFragmentPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:inputType="number|numberDecimal"
+                android:text="@{stringUtils.hideCurrency(article.price)}"
+                android:textAlignment="textEnd"
+                android:textColor="@color/colorSecondaryDark"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/flexboxLayout"
+                tools:text="2413253 $" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:contentScrim="?attr/colorPrimary"
+                app:expandedTitleMarginEnd="64dp"
+                app:expandedTitleMarginStart="48dp"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+                <ImageView
+                    android:id="@+id/editFragmentHeaderImage"
+                    imageUrl="@{article.imgSrc}"
+                    android:layout_width="match_parent"
+                    android:layout_height="325dp"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:id="@+id/editImageLogo"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_baseline_image_search_24" />
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/editFragmentToolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_collapseMode="pin" />
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/editButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            app:layout_anchor="@id/appBar"
+            android:tint="@android:color/white"
+            android:backgroundTint="@color/colorPrimary"
+            app:layout_anchorGravity="bottom|right|end"
+            android:layout_margin="16dp"
+            app:srcCompat="@drawable/ic_baseline_check_24"
+            android:focusable="true" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/editDeleteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:clickable="true"
+            android:enabled="true"
+            android:src="@drawable/ic_baseline_delete_24"
+            android:tint="@android:color/white"
+            app:backgroundTint="@color/colorPrimary"
+            app:layout_anchor="@id/appBar"
+            app:layout_anchorGravity="bottom|left|end"
+            android:focusable="true" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

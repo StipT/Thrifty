@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryLight"
+        android:elevation="10dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="32dp"
+            android:backgroundTint="@color/colorPrimary"
+            app:cardCornerRadius="50dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent">
+
+
+                <TextView
+                    android:id="@+id/addImageTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="64dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="64dp"
+                    android:text="@string/add_image_title"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/addImageSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/add_image_subtitle"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/addImageTitle"
+                    app:layout_constraintStart_toStartOf="@+id/addImageTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/addImageTitle" />
+
+                <Button
+                    android:id="@+id/addImageUploadButton"
+                    android:layout_width="250dp"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="16dp"
+                    android:backgroundTint="@color/background"
+                    android:enabled="false"
+                    android:text="@string/add_location_upload_button"
+                    android:textColor="@color/textColorOnPrimary"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <ImageView
+                    android:id="@+id/addImageBackButton"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:src="?attr/actionModeCloseDrawable"
+                    app:layout_constraintBottom_toBottomOf="@+id/addImageTitle"
+                    app:layout_constraintEnd_toStartOf="@+id/addImageTitle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/addImageTitle"
+                    app:tint="@android:color/white" />
+
+                <ProgressBar
+                    android:id="@+id/addImageProgressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:max="10"
+                    android:progress="9"
+                    android:progressTint="@android:color/white"
+                    app:layout_constraintEnd_toEndOf="@+id/addImageTitle"
+                    app:layout_constraintStart_toStartOf="@+id/addImageTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/addImageSubtitle" />
+
+                <Button
+                    android:id="@+id/locateButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:backgroundTint="@android:color/white"
+                    android:text="@string/add_image_find_button"
+                    android:textColor="@color/textColorOnPrimary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/addImageProgressBar"
+                    app:layout_constraintStart_toStartOf="@+id/addImageProgressBar"
+                    app:layout_constraintTop_toBottomOf="@+id/addImageImage" />
+
+                <ImageView
+                    android:id="@+id/addImageImage"
+                    android:layout_width="300dp"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="32dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_baseline_image_search_24"
+                    app:layout_constraintBottom_toTopOf="@+id/addImageUploadButton"
+                    app:layout_constraintEnd_toEndOf="@+id/addImageProgressBar"
+                    app:layout_constraintHorizontal_bias="0.50"
+                    app:layout_constraintStart_toStartOf="@+id/addImageProgressBar"
+                    app:layout_constraintTop_toBottomOf="@+id/addImageProgressBar"
+                    app:layout_constraintVertical_bias="0.100000024"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+</layout>

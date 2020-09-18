@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimaryLight"
+        android:layout_height="match_parent"
+        android:elevation="10dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="32dp"
+            android:backgroundTint="@color/colorPrimary"
+            app:cardCornerRadius="50dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent">
+
+
+                <TextView
+                    android:id="@+id/addInfoTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="64dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="64dp"
+                    android:textColor="@android:color/white"
+                    android:text="@string/add_image_title"
+                    android:textAlignment="center"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/addInfoSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/add_info_subtitle"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/addInfoTitle"
+                    app:layout_constraintStart_toStartOf="@+id/addInfoTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/addInfoTitle" />
+
+                <Button
+                    android:id="@+id/addInfoNextButton"
+                    android:layout_width="250dp"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="16dp"
+                    android:backgroundTint="@color/background"
+                    android:enabled="true"
+                    android:text="@string/add_image_next_button"
+                    android:textColor="@color/textColorOnPrimary"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <ImageView
+                    android:id="@+id/addInfoBackButton"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:src="?attr/actionModeCloseDrawable"
+                    app:layout_constraintBottom_toBottomOf="@+id/addInfoTitle"
+                    app:layout_constraintEnd_toStartOf="@+id/addInfoTitle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/addInfoTitle"
+                    app:tint="@android:color/white" />
+
+                <ProgressBar
+                    android:id="@+id/addInfoProgressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:max="10"
+                    android:progress="3"
+                    android:progressTint="@android:color/white"
+                    app:layout_constraintEnd_toEndOf="@+id/addInfoTitle"
+                    app:layout_constraintStart_toStartOf="@+id/addInfoTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/addInfoSubtitle" />
+
+
+                <TextView
+                    android:id="@+id/addInfoCategoryTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/category_title_text"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/addInfoProgressBar" />
+
+                <TextView
+                    android:id="@+id/addInfoTitleSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/add_info_title_title"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/addInfoCategoryTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/addInfoSpinner" />
+
+                <EditText
+                    android:id="@+id/addInfoTitleEditBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:backgroundTintMode="add"
+                    android:ems="10"
+                    android:hint="@string/add_info_title_smallcase"
+                    android:inputType="textWebEmailAddress"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/addInfoTitleSubtitle" />
+
+                <Spinner
+                    android:id="@+id/addInfoSpinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTintMode="add"
+                    android:spinnerMode="dropdown"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/addInfoProgressBar"
+                    app:layout_constraintTop_toBottomOf="@+id/addInfoCategoryTitle" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/add_info_description"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/addInfoTitleSubtitle"
+                    app:layout_constraintTop_toBottomOf="@+id/addInfoPrice" />
+
+                <EditText
+                    android:id="@+id/addInfoDescription"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:backgroundTintMode="add"
+                    android:ems="10"
+                    android:hint="@string/add_info_description_lowcase"
+                    android:inputType="textLongMessage|textMultiLine|text"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textStyle="italic"
+                    app:layout_constraintBottom_toTopOf="@+id/addInfoNextButton"
+                    app:layout_constraintEnd_toEndOf="@+id/addInfoPrice"
+                    app:layout_constraintStart_toStartOf="@+id/addInfoPrice"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                <TextView
+                    android:id="@+id/addInfoPriceTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:text="@string/add_info_price_title"
+                    app:layout_constraintStart_toStartOf="@+id/addInfoTitleSubtitle"
+                    app:layout_constraintTop_toBottomOf="@+id/addInfoTitleEditBox" />
+
+                <EditText
+                    android:id="@+id/addInfoPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:hint="@string/add_info_price_hint"
+                    android:ems="10"
+                    android:backgroundTintMode="add"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textStyle="italic"
+                    android:inputType="numberDecimal"
+                    app:layout_constraintEnd_toEndOf="@+id/addInfoTitleEditBox"
+                    app:layout_constraintStart_toStartOf="@+id/addInfoTitleEditBox"
+                    app:layout_constraintTop_toBottomOf="@+id/addInfoPriceTitle" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+</layout>

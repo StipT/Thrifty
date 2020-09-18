@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryLight"
+        android:elevation="10dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="32dp"
+            android:backgroundTint="@color/colorPrimary"
+            app:cardCornerRadius="50dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent">
+
+
+                <TextView
+                    android:id="@+id/addInfoTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="64dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="64dp"
+                    android:text="@string/add_image_title"
+                    android:textColor="@android:color/white"
+                    android:textAlignment="center"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/addLocationSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/add_location_subtitle"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/addInfoTitle"
+                    app:layout_constraintStart_toStartOf="@+id/addInfoTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/addInfoTitle" />
+
+                <Button
+                    android:id="@+id/addLocationNextButton"
+                    android:layout_width="250dp"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="16dp"
+                    android:backgroundTint="@color/background"
+                    android:enabled="true"
+                    android:text="@string/add_image_next_button"
+                    android:textColor="@color/textColorOnPrimary"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <ImageView
+                    android:id="@+id/addLocationBackButton"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:src="?attr/actionModeCloseDrawable"
+                    app:layout_constraintBottom_toBottomOf="@+id/addInfoTitle"
+                    app:layout_constraintEnd_toStartOf="@+id/addInfoTitle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/addInfoTitle"
+                    app:tint="@android:color/white" />
+
+                <ProgressBar
+                    android:id="@+id/addLocationProgressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:max="10"
+                    android:progress="6"
+                    android:progressTint="@android:color/white"
+                    app:layout_constraintEnd_toEndOf="@+id/addInfoTitle"
+                    app:layout_constraintStart_toStartOf="@+id/addInfoTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/addLocationSubtitle" />
+
+                <fragment
+                    android:id="@+id/googleMapFragment"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    app:layout_constraintBottom_toTopOf="@+id/addLocationTextView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/addLocationProgressBar" />
+
+                <TextView
+                    android:id="@+id/addLocationTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold|italic"
+                    app:layout_constraintBottom_toTopOf="@+id/addLocationNextButton"
+                    app:layout_constraintEnd_toEndOf="@+id/googleMapFragment"
+                    app:layout_constraintStart_toStartOf="@+id/googleMapFragment" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+</layout>
